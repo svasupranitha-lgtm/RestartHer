@@ -1,0 +1,28 @@
+{
+  "generationParameters": {
+    "generationDate": "Sat Oct 31 2026 08:32:16 GMT+0000 (Coordinated Universal Time)",
+    "generatorPlatform": "SAP Business Application Studio",
+    "serviceType": "Local CAP",
+    "metadataFilename": "",
+    "serviceUrl": "http://localhost:4004/odata/v4/restart-her/",
+    "appName": "restarther",
+    "appTitle": "RestartHer",
+    "appDescription": "AI-powered career re-entry platform for women returning after career breaks.",
+    "appNamespace": "restarther",
+    "ui5Theme": "sap_horizon",
+    "ui5Version": "1.154.0",
+    "enableEslint": true,
+    "enableTypeScript": false,
+    "showMockDataInfo": false,
+    "generatorVersion": "1.34.0",
+    "template": "List Report Page V4",
+    "generatorName": "SAP Fiori Application Generator",
+    "entityRelatedConfig": [
+      {
+        "type": "Main Entity",
+        "value": "ReturningProfessionals"
+      }
+    ],
+    "launchText": "To launch the generated app, start your CAP project:  and navigate to the following location in your browser:\n\nhttp://localhost:4004/restarther/webapp/index.html"
+  }
+}

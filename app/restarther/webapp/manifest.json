@@ -1,0 +1,170 @@
+
+
+
+{
+  "_version": "1.90.0",
+  "sap.app": {
+    "id": "restarther.restarther",
+    "type": "application",
+    "i18n": "i18n/i18n.properties",
+    "applicationVersion": {
+      "version": "0.0.1"
+    },
+    "title": "{{appTitle}}",
+    "description": "{{appDescription}}",
+    "resources": "resources.json",
+    "sourceTemplate": {
+      "id": "@sap/generator-fiori:lrop",
+      "version": "1.34.0",
+      "toolsId": "dd364e4c-a4aa-4e32-ba6c-1bfab9c2fe7b"
+    },
+    "dataSources": {
+      "mainService": {
+        "uri": "/odata/v4/restart-her/",
+        "type": "OData",
+        "settings": {
+          "odataVersion": "4.0"
+        }
+      }
+    }
+  },
+  "sap.ui": {
+    "technology": "UI5",
+    "icons": {
+      "icon": "",
+      "favIcon": "",
+      "phone": "",
+      "phone@2": "",
+      "tablet": "",
+      "tablet@2": ""
+    },
+    "deviceTypes": {
+      "desktop": true,
+      "tablet": true,
+      "phone": true
+    }
+  },
+  "sap.ui5": {
+    "flexEnabled": true,
+    "dependencies": {
+      "minUI5Version": "1.154.0",
+      "libs": {
+        "sap.m": {},
+        "sap.ui.core": {},
+        "sap.fe.templates": {}
+      }
+    },
+    "contentDensities": {
+      "compact": true,
+      "cozy": true
+    },
+    "models": {
+      "i18n": {
+        "type": "sap.ui.model.resource.ResourceModel",
+        "settings": {
+          "bundleName": "restarther.restarther.i18n.i18n"
+        }
+      },
+      "": {
+        "dataSource": "mainService",
+        "preload": true,
+        "settings": {
+          "operationMode": "Server",
+          "autoExpandSelect": true,
+          "earlyRequests": true
+        }
+      },
+      "@i18n": {
+        "type": "sap.ui.model.resource.ResourceModel",
+        "uri": "i18n/i18n.properties"
+      }
+    },
+    "resources": {
+      "css": []
+    },
+    "routing": {
+      "config": {},
+      "routes": [
+        {
+          "pattern": ":?query:",
+          "name": "ReturningProfessionalsList",
+          "target": "ReturningProfessionalsList"
+        },
+        {
+          "pattern": "ReturningProfessionals({key}):?query:",
+          "name": "ReturningProfessionalsObjectPage",
+          "target": "ReturningProfessionalsObjectPage"
+        }
+      ],
+      "targets": {
+        "ReturningProfessionalsList": {
+          "type": "Component",
+          "id": "ReturningProfessionalsList",
+          "name": "sap.fe.templates.ListReport",
+          "options": {
+            "settings": {
+              "contextPath": "/ReturningProfessionals",
+              "variantManagement": "Page",
+              "navigation": {
+                "ReturningProfessionals": {
+                  "detail": {
+                    "route": "ReturningProfessionalsObjectPage"
+                  }
+                }
+              },
+              "controlConfiguration": {
+                "@com.sap.vocabularies.UI.v1.LineItem": {
+                  "tableSettings": {
+                    "type": "ResponsiveTable"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "ReturningProfessionalsObjectPage": {
+          "type": "Component",
+          "id": "ReturningProfessionalsObjectPage",
+          "name": "sap.fe.templates.ObjectPage",
+          "options": {
+            "settings": {
+              "editableHeaderContent": false,
+              "contextPath": "/ReturningProfessionals",
+              "content": {
+                "header": {
+                  "actions": {
+                    "DiscoverSkills": {
+                      "press": "restarther.restarther.ext.SkillsDiscovery.onDiscoverSkills",
+                      "text": "Discover Skills",
+                      "enabled": true
+                    },
+                    "DiscoverCareers": {
+                      "press": "restarther.restarther.ext.SkillsDiscovery.onRecommendCareers",
+                      "text": "Discover Career Paths",
+                      "enabled": true
+                    },
+                    "LearningPathway": {
+                      "press": "restarther.restarther.ext.SkillsDiscovery.onLearningPathway",
+                      "text": "Learning Pathway",
+                      "enabled": true
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "sap.fiori": {
+    "registrationIds": [],
+    "archeType": "transactional"
+  },
+  "sap.fe": {
+    "app": {
+      "enableLazyLoading": true
+    }
+  }
+}
+
