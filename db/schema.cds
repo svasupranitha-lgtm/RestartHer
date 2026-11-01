@@ -1,5 +1,6 @@
 
 
+
 namespace restarther;
 
 using { cuid, managed } from '@sap/cds/common';
@@ -60,6 +61,35 @@ type LearningRecommendation {
     description       : LargeString;
     sequence          : Integer;
     estimatedDuration : String(40);
+}
+
+// Results returned by Bias Audit Agent
+type BiasAuditResult {
+    area        : String(100);
+    severity    : String(30);
+    finding     : LargeString;
+    explanation : LargeString;
+    suggestion  : LargeString;
+}
+// Results returned by Mock Interview Agent
+type MockInterviewQuestion {
+    questionID   : Integer;
+    role         : String(120);
+    question     : LargeString;
+    questionType : String(50);
+}
+
+// Feedback returned after candidate submits an answer
+type InterviewFeedback {
+    questionID       : Integer;
+    question         : LargeString;
+    candidateAnswer  : LargeString;
+    relevanceScore   : Integer;
+    clarityScore     : Integer;
+    completenessScore: Integer;
+    totalScore       : Integer;
+    feedback         : LargeString;
+    improvementTips  : LargeString;
 }
 
 

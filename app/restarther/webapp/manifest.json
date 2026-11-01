@@ -147,7 +147,17 @@
                       "press": "restarther.restarther.ext.SkillsDiscovery.onLearningPathway",
                       "text": "Learning Pathway",
                       "enabled": true
-                    }
+                    },
+                    "BiasAudit": {
+                      "press": "restarther.restarther.ext.SkillsDiscovery.onAuditBias",
+                      "text": "Bias Audit",
+                      "enabled": true
+                    },
+                    "MockInterview": {
+                         "press": "restarther.restarther.ext.SkillsDiscovery.onStartMockInterview",
+                         "text": "Mock Interview",
+                         "enabled": true
+                        }
                   }
                 }
               }
